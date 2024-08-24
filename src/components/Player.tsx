@@ -1,4 +1,5 @@
 import * as React from 'react';
+import Slider from './Slider';
 
 const Player = React.forwardRef(function Player(
   props: { className?: string },
@@ -35,19 +36,7 @@ const Player = React.forwardRef(function Player(
         </div>
         <div className="space-y-2">
           <div className="relative">
-            <div className="bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
-              <div
-                className="bg-cyan-500 dark:bg-cyan-400 w-1/2 h-2"
-                role="progressbar"
-                aria-label="music progress"
-                aria-valuenow={1456}
-                aria-valuemin={0}
-                aria-valuemax={4550}
-              ></div>
-            </div>
-            <div className="ring-cyan-500 dark:ring-cyan-400 ring-2 absolute left-1/2 top-1/2 w-4 h-4 -mt-2 -ml-2 flex items-center justify-center bg-white rounded-full shadow">
-              <div className="w-1.5 h-1.5 bg-cyan-500 dark:bg-cyan-400 rounded-full ring-1 ring-inset ring-slate-900/5"></div>
-            </div>
+            <Slider step={50} defaultValue={1456} max={4550} min={0} />
           </div>
           <div className="flex justify-between text-sm leading-6 font-medium tabular-nums">
             <div className="text-cyan-500 dark:text-slate-100">24:16</div>
